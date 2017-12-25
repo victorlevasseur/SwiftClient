@@ -224,14 +224,6 @@ open class Response{
         // setting raw data into variables.
         self.data = rawData
         self.body = rawData as Any?
-        if let data = rawData {
-            self.text = dataToString(data: data)
-            if let type = self.type {
-                if let parser = parsers[type] {
-                    self.body = parser(data, self.text!) as Any?
-                }
-            }
-        }
     }
     
     // MARK: - Response enums.
